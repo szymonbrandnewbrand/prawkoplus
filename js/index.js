@@ -257,10 +257,10 @@ $.getJSON("js/data.json", function (os) {
 
             if (list[i].visible !== false) {
                 const markup = [/*html*/`  
-                        <div class="image d-flex align-items-center justify-content-center">
-                            <img src="img/${img}">
+                        <div class="image d-flex align-items-center justify-content-center col-3 p-0 py-3 pl-3">
+                            <img style="height: 90%;" src="img/${img}">
                         </div>
-                        <div class="item-content w-50 c-back ml-2 ml-xl-5 py-4 d-flex flex-column justify-content-between">
+                        <div class="item-content col-6 c-back py-4 d-flex flex-column justify-content-between">
                             <h4 class="c-red">Ośrodek ${list[i].name}</h4>
                             <div class="descripton-short my-2">
                                 <p>${list[i].shortDescription} 
@@ -271,7 +271,7 @@ $.getJSON("js/data.json", function (os) {
                                 <p class="ml-0 ml-xl-5">cena: <b>${price} ${wal}</b></p>
                             </div>
                         </div>
-                        <div class="category d-flex flex-column justify-content-between my-4 px-3" style="border-left: 2px solid black">
+                        <div class="category d-flex flex-column justify-content-between my-4 px-3 col-2" style="border-left: 2px solid black;">
                             <div>
                                 <p><b>${list[i].category}</b></p>
                                 <p class="mt-2 mb-0">${list[i].street}</p>
@@ -284,10 +284,10 @@ $.getJSON("js/data.json", function (os) {
                         
                     `]
                 const markupM = [/*html*/`  
-                    <div class="wrap p-2">
+                    <div class="wrap p-3">
                         <div class="d-flex flex-wrap">
                             <div class="image w-50">
-                                <img src="img/${list[i].img}">
+                                <img src="img/${img}">
                             </div>
                             <div class="des c-back w-50 pt-2">
                                 <h4 class="c-red">Ośrodek ${list[i].name}</h4>
@@ -327,13 +327,13 @@ $.getJSON("js/data.json", function (os) {
         markupsM = [];
         let c = document.getElementById('numerki');
         c.innerHTML = "";
-        for (var i = 0; i < Math.ceil(counter / 3); i++) {
+        for (var i = 0; i < Math.ceil(counter / 4); i++) {
             markupsD[i] = new Array();
             markupsM[i] = new Array();
         }
 
-        for (let i = 1; i <= Math.ceil(counter / 3); i++) {
-            for (let j = (i - 1) * 3, a = 0; j < i * 3; j++ , a++) {
+        for (let i = 1; i <= Math.ceil(counter / 4); i++) {
+            for (let j = (i - 1) * 4, a = 0; j < i * 4; j++ , a++) {
                 if (markups[j]) {
                     markupsD[i - 1][a] = markups[j];
                     markupsM[i - 1][a] = markupsMob[j];
@@ -369,7 +369,7 @@ $.getJSON("js/data.json", function (os) {
             for (let j = 0; j < markupsD[active - 1].length; j++) {
                 const el = document.createElement('div');
                 const elMob = document.createElement('div');
-                el.className = "search-item d-flex position-relative p-0";
+                el.className = "search-item d-flex position-relative p-0 justify-content-between aling-items-center";
                 elMob.className = "search-item d-flex position-relative p-0";
                 el.innerHTML += markupsD[active - 1][j];
                 elMob.innerHTML += markupsM[active - 1][j];
