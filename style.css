@@ -187,16 +187,17 @@ option {
 }
 
 .search-list {
-    padding: 7% 6% 0 6%;
+    padding: 5% 4% 0 4%;
     width: 100%;
 }
-#search-list { height: 900px; }
+#search-list { height: unset; }
 
 .search-item {
     border-radius: 15px;
     width: 100% !important;
-    margin-bottom: 7%;
+    margin-bottom: 40px;
     opacity: 0;
+    height: 200px;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
