@@ -25,7 +25,7 @@ $_SESSION['active']=1;
 			<div class="row">
 				<div class="col-9 ml-auto ml-xl-0 col-xl-5 p-0">
 					<div class="heading mb-4">
-						<h1>Wyszukiwarka kursów prawa jazdy plus</h1>
+						<h1>Wyszukiwarka kursów prawa jazdy plussss</h1>
 					</div>
 					<hr class="hr-margin-left">
 					<div class="heading-p mt-4 mt-xl-5 ">

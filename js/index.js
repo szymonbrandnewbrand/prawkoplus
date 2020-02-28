@@ -80,10 +80,10 @@ $.getJSON("js/data.json", function (os) {
 
 
 
-    for(let j = 0; j < cit.length; j++){
-        for(let k = 0; k < cit.length; k++) {
-            if(j != k) {
-                if(cit[j] == cit[k]) {
+    for (let j = 0; j < cit.length; j++) {
+        for (let k = 0; k < cit.length; k++) {
+            if (j != k) {
+                if (cit[j] == cit[k]) {
                     cit[k] = "NULL";
                 }
             }
@@ -92,10 +92,8 @@ $.getJSON("js/data.json", function (os) {
 
     var b = 0;
 
-    for(let a = 0; a < cit.length; a++)
-    {
-        if(cit[a] != "NULL")
-        {
+    for (let a = 0; a < cit.length; a++) {
+        if (cit[a] != "NULL") {
             cities[b] = cit[a];
             b++;
         }
@@ -247,11 +245,11 @@ $.getJSON("js/data.json", function (os) {
             var wal = 'PLN';
             var img = list[i].img;
 
-            if(price.length<1){
+            if (price.length < 1) {
                 var price = 'brak';
                 var wal = '';
             }
-            if(img.length<1){
+            if (img.length < 1) {
                 var img = 'card-img.png';
             }
 
