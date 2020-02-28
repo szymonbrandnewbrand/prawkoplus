@@ -1,0 +1,61 @@
+body {
+    background: rgb(32,1,49);
+    background: radial-gradient(circle, rgba(32,1,49,1) 0%, rgba(15,14,25,1) 100%);
+    font-family: 'Nunito', sans-serif;
+}
+
+a { text-decoration: none; color: white; }
+a:hover { text-decoration: none; color: white; }
+#wrapper {
+    background-image: url(img/kurs-bg.png);
+    background-size: cover;
+    padding-left: 7.4%;
+    padding-right: 7.4%;
+} 
+
+.invisible_bnb {
+    height: 0px !important;
+    width: 0px !important;
+    position: absolute;
+    opacity: 0;
+}
+
+img { vertical-align: unset; }
+h1 { font-size: 48px; }
+h2 { font-size: 28px; }
+.c-red { color: #B50625; }
+hr { border: 3px solid #0F0E19; }
+p { font-size: 24px; line-height: 40px; }
+
+.animate-hr hr { max-width: 18%; transition: max-width 1s; border: 2px solid white; }
+.animate-hr:hover hr { max-width: 100%; }
+.os-card { border-radius: 27px; padding: 35px; }
+.os-form { border-radius: 27px; padding: 0 25px; max-height: 700px;}
+.f20 { font-size: 15px; }
+.os-img img { width: 80%; height: 80%; }
+@media(max-width: 1700px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 22px; }
+    p { font-size: 18px; line-height: 28px; }
+    .star { width: 22px; height: 22px; }
+    .btn-primary { font-size: 17px; }
+}
+
+@media(max-width: 1500px) {
+    #wrapper { padding-left: 5%; padding-right: 5%; }
+}
+
+@media(max-width: 768px) {
+    #wrapper { padding: 5px !important; height: unset; }
+    .os-card, .os-form { height: unset; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 18px; }
+    p { font-size: 15px; line-height: 22px; }
+    .side-form { height: unset; margin-top: 0; padding: 20px 20px;}
+    .os-form { padding: 0; }
+    
+}
+
+@media(min-width: 1000px) {
+    
+}

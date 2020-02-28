@@ -1,0 +1,49 @@
+.regulamin li {
+    margin-bottom: 10px;
+}
+
+.regulamin li a {
+    color: black;
+}
+
+.regulamin li a:hover {
+    color: #B40524;
+}
+
+.regulamin li:hover {
+    color: #B40524;
+}
+
+.text-primary {
+    color: #B40524 !important;
+}
+
+.regulamin_body {
+    font-size: 18px;
+}
+
+.regulamin_body li {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.position-absolute {
+    position: fixed;
+    z-index: 9999;
+}
+
+
+#wrapper {
+    background-image: none !important;
+}
+
+.reg {
+    background-image: url('img/reg.svg');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -9999;
+}
