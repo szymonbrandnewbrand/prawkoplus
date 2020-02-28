@@ -60,6 +60,9 @@ $.getJSON("js/data.json", function (os) {
 
     for (let i = 0; i < list.length; i++) {
         list[i].rating = (list[i].rating1 + list[i].rating2 + list[i].rating3 + list[i].rating4 + list[i].rating5) / 5;
+        if (list[i].rating1 == 0 && list[i].rating2 == 0 && list[i].rating3 == 0 && list[i].rating4 == 0 && list[i].rating5 == 0) {
+            list[i].rating = "brak";
+        }
         list[i].visible = true;
         list[i].shortDescription = list[i].description;
         if (list[i].shortDescription < 1) {
