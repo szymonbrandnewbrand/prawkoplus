@@ -18,11 +18,11 @@ $(document).ready(function () {
     var price = data[0].price;
     var wal = 'PLN';
     var img = data[0].img;
-    if(price.length<1){
+    if(price == 0){
         var price = 'brak';
         var wal = '';
     }
-    if(img.length<1){
+    if(img == 0){
         var img = 'card-img.png';
     }
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
             <img src="img/${img}">
         </div>
         <div class="col-md-7">
-            <h1 class="c-red font-weight-bold text-left">${data[0].name}</h1>
+            <h4 class="c-red font-weight-bold text-left">${data[0].name}</h4>
             <div class="row mt-4">
                 <div class="col">
                     <h2 class="text-left">cena: <span class="font-weight-bold">${price} ${wal}</span></h2>
