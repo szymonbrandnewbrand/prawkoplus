@@ -14,15 +14,28 @@ $(document).ready(function () {
             data = list.filter((e) => e.id == myParam);
             data[0].rating = Number(rat);
             
-        
+
     var price = data[0].price;
     var wal = 'PLN';
     var img = data[0].img;
+    var description = data[0].description;
+    var rating1 = data[0].rating1;
+
+    if (rating1 ==0) {
+        rating1="brak";
+    }
+
+
     if(price.length<1){
         var price = 'brak';
         var wal = '';
     }
-    if(img.length<1){
+
+    if(description == 0){
+        var description = 'Ośrodek nie zgłosił się do programu Prawko Plus.';
+    }
+
+    if(img == 0){
         var img = 'card-img.png';
     }
 
@@ -43,25 +56,23 @@ $(document).ready(function () {
     }
 
 
-
-
     const itemHeader = /*html*/`
         <div class="col-md-5 d-flex os-img p-0 justify-content-center align-items-center">
             <img src="img/${img}">
         </div>
         <div class="col-md-7">
-            <h1 class="c-red font-weight-bold text-left">${data[0].name}</h1>
-            <div class="row mt-4">
+            <h4 class="c-red font-weight-bold text-left">${data[0].name}</h4>
+            <div class="row mt-3">
                 <div class="col">
-                    <h2 class="text-left">cena: <span class="font-weight-bold">${price} ${wal}</span></h2>
+                    <h5 class="text-left">cena: <span class="font-weight-bold">${price} ${wal}</span></h5>
                 </div>
                 <div class="col text-right">
-                    <h2 class="font-weight-bold">${data[0].category}</h2>
+                    <h5 class="font-weight-bold">${data[0].category}</h5>
                 </div>
             </div>
-            <div class="row mt-4 justify-content-between">
+            <div class="row mt-2 justify-content-between">
                 <div class="col">
-                    <h2 class="text-left">ocena: <span class="font-weight-bold">${data[0].rating}</span></h2>
+                    <h5 class="text-left">ocena: <span class="font-weight-bold">${data[0].rating}</span></h5>
                 </div>
                 <div class="col">
                     <div class="row justify-content-end ml-xl-0">
@@ -69,7 +80,7 @@ $(document).ready(function () {
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
+            <div class="row mt-2">
                 <div class="col-xl-12">
                     <h5>${data[0].street}</h5>
                     <h5>${data[0].city}</h5>
@@ -78,12 +89,18 @@ $(document).ready(function () {
         </div>
     `
 
-    var kategorie = ["Zaangażowanie instruktora", "Efekt szkolenia", "Zaangażowanie ośrodka", "Profesjonalizm instruktora", "Stan samochodów szkoleniowych"];
+    if (data[0].rating != 0) {
+        var kategorie = ["Zaangażowanie instruktora:", "Efekt szkolenia:", "Zaangażowanie ośrodka:", "Profesjonalizm instruktora:", "Stan samochodów szkoleniowych:"];
+    } else {
+        var kategorie = ["", "", "", "", ""];
+    }
+
+    
     for (let k = 0; k < 5; k++) {
 
         osRatings.push(/*html*/ `
             <div class="px-0 mb-4 col-md-6">
-                <p class="mb-0">${kategorie[k]}: </p>
+                <p class="mb-0">${kategorie[k]} </p>
                 <div class="row justify-content-center justify-content-xl-start ml-xl-0">
                     ${createStars(x[k])}
                 </div>
@@ -91,6 +108,43 @@ $(document).ready(function () {
             
     `)
     }
+
+    var rating_test = "brak";
+
+
+    const itemHeader_test = /*html*/`
+        <div class="col-md-5 d-flex os-img p-0 justify-content-center align-items-center">
+            <img src="img/${img}">
+        </div>
+        <div class="col-md-7">
+            <h4 class="c-red font-weight-bold text-left">${data[0].name}</h4>
+            <div class="row mt-3">
+                <div class="col">
+                    <h5 class="text-left">cena: <span class="font-weight-bold">${price} ${wal}</span></h5>
+                </div>
+                <div class="col text-right">
+                    <h5 class="font-weight-bold">${data[0].category}</h5>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-between">
+                <div class="col">
+                    <h5 class="text-left">ocena: <span class="font-weight-bold">${rating_test}</span></h5>
+                </div>
+                <div class="col">
+                    <div class="row justify-content-end ml-xl-0">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-xl-12">
+                    <h5>${data[0].street}</h5>
+                    <h5>${data[0].city}</h5>
+                </div>
+            </div>
+        </div>
+    `
+
+
 
     console.log(osRatings);
 
@@ -125,8 +179,12 @@ $(document).ready(function () {
 
     cardHeader.className = "row m-0";
     cardHeader.innerHTML = '';
-    cardHeader.innerHTML += itemHeader;
-    descripton.innerHTML = data[0].description;
+    if (data[0].rating == 0) {
+        cardHeader.innerHTML += itemHeader_test;
+    } else {
+        cardHeader.innerHTML += itemHeader;
+    }
+    descripton.innerHTML = description;
 
 
     he.appendChild(cardHeader);

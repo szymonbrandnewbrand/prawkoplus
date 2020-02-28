@@ -9,7 +9,7 @@ $_SESSION['active']=1;
 	<meta charset="utf-8">
 	<link rel="shortcut icon" href="img/favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Prawko Plus+</title>
+	<title>Prawko Plus</title>
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
@@ -25,7 +25,7 @@ $_SESSION['active']=1;
 			<div class="row">
 				<div class="col-9 ml-auto ml-xl-0 col-xl-5 p-0">
 					<div class="heading mb-4">
-						<h1>Wyszukiwarka kursów prawa jazdy plussss</h1>
+						<h1>Wyszukiwarka kursów prawa jazdy</h1>
 					</div>
 					<hr class="hr-margin-left">
 					<div class="heading-p mt-4 mt-xl-5 ">

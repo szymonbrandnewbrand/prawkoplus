@@ -11,11 +11,11 @@
     "price": 0,
     "img": 0,
     "description": 0,
-    "rating1": 0,
-    "rating2": 0,
-    "rating3": 0,
-    "rating4": 0,
-    "rating5": 0
+    "rating1": 3,
+    "rating2": 4,
+    "rating3": 2,
+    "rating4": 5,
+    "rating5": 1
   },
   {
     "id": 2,
