@@ -122,6 +122,7 @@ $.getJSON("js/data.json", function (os) {
         active = e;
         sessionStorage.setItem('active', active);
         trig();
+        bTrig();
     }
 
     activeC = (e) => {
@@ -129,10 +130,12 @@ $.getJSON("js/data.json", function (os) {
             active += e;
             sessionStorage.setItem('active', active);
             trig();
+            bTrig();
         } else if (e === -1 && active > 1) {
             active += e;
             sessionStorage.setItem('active', active);
             trig();
+            bTrig();
         }
 
     }
@@ -323,8 +326,7 @@ $.getJSON("js/data.json", function (os) {
     function d() {
         markupsD = [];
         markupsM = [];
-        let c = document.getElementById('numerki');
-        c.innerHTML = "";
+
         for (var i = 0; i < Math.ceil(counter / 4); i++) {
             markupsD[i] = new Array();
             markupsM[i] = new Array();
@@ -339,14 +341,39 @@ $.getJSON("js/data.json", function (os) {
 
             };
 
-            const buttons = /*html*/ `
-            <button onclick='activeHandle(${i})' class="btn-mine" id=${i}>${i}</button>     
-        `
 
-            c.innerHTML += buttons;
         }
 
         trig();
+        bTrig();
+    }
+
+    function bTrig() {
+        let c = document.getElementById('numerki');
+        c.innerHTML = "";
+        console.log("active " + active)
+        const mcon = Math.ceil(counter / 4);
+        let buttons;
+        buttons = /*html*/ `
+                <button onclick='activeHandle(${active})' class="btn-mine active" id=${active}>${active}</button>     
+       `
+
+        // for (let i = 1; i < 5; i++) {
+        //     buttons += /*html*/ `
+        //         <button onclick='activeHandle(${i})' class="btn-mine" id=${i}>${i}</button>     
+        //     `
+        //     if (i == 4) {
+
+        //         buttons += "...";
+        //         buttons += /*html*/ `
+        //         <button onclick='activeHandle(${mcon})' class="btn-mine" id=${mcon}>${mcon}</button>     
+        //     `
+        //     }
+        // }
+        c.innerHTML += buttons;
+
+
+
     }
 
     function trig() {
@@ -354,13 +381,15 @@ $.getJSON("js/data.json", function (os) {
         for (let i = 0; i < b.length; i++) {
             $(b[i]).removeClass('active');
         }
+        console.log(b);
         $(b[active - 1]).addClass('active');
+
         const list = document.getElementById('search-list');
         const listMobile = document.getElementById('search-list-mobile');
         list.innerHTML = '';
         listMobile.innerHTML = '';
         if (markupsD[0]) {
-            if (active > b.length || active <= 0) {
+            if (active <= 0) {
                 active = 1;
             }
             console.log(active, sessionStorage.getItem('active'))
