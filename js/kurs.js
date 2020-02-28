@@ -18,15 +18,15 @@ $(document).ready(function () {
         var price = data[0].price;
         var wal = 'PLN';
         var img = data[0].img;
-        if (data[0].price < 1) {
+        if (price == 0) {
             var price = 'brak';
             var wal = '';
         }
-        if (data[0].img < 1) {
+        if (img == 0) {
             var img = 'card-img.png';
         }
 
-        const stars = Math.floor(data[0].rating)
+        const stars = Math.floor(data[0].rating);
 
 
         const osRatings = [];
