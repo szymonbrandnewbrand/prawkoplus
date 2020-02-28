@@ -448,7 +448,7 @@ footer.container-fluid > .row {
     .about { margin-top: 40px !important; }
     .join { margin-top: 450px !important; }
     .contact { margin-top: 550px !important; }
-    p { font-size: 22px !important; }
+    p { font-size: 18px !important; }
 }
 
 @media (max-width: 3500px) {

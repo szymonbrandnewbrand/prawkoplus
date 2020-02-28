@@ -92,31 +92,11 @@ session_start();
             </div>
             <div class="col-md-6 offset-md-2 d-flex justify-content-center flex-column">
                 <div class="heading">
-                    <p>Dołączyli do nas</p>
+                    <p>Partnerzy</p>
                 </div>
                 <hr class="w-100">
-                <div class="row">
-                    <div class="col-4 col-xl-4">
-                        <p class="f24">
-                            Lorem ipsum dolor sit
-                            amet, consectetur
-                            adipiscing elit, sed do
-                        </p>
-                    </div>
-                    <div class="col-4 col-xl-4">
-                        <p class="f24">
-                            Lorem ipsum dolor sit
-                            amet, consectetur
-                            adipiscing elit, sed do
-                        </p>
-                    </div>
-                    <div class="col-4 col-xl-4">
-                        <p class="f24">
-                            Lorem ipsum dolor sit
-                            amet, consectetur
-                            adipiscing elit, sed do
-                        </p>
-                    </div>
+                <div class="row px-3">
+                    <h5>Chcesz dołączyć do programu bezpieczna droga? Śmiało napisz do nas! Niebawem może tu zabraknąć miejsca.</h5>
                 </div>
             </div>
         </div>

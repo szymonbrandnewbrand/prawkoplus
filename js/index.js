@@ -269,7 +269,7 @@ $.getJSON("js/data.json", function (os) {
                                 <p class="ml-0 ml-xl-5">cena: <b>${price} ${wal}</b></p>
                             </div>
                         </div>
-                        <div class="category d-flex flex-column justify-content-between my-4 px-3 col-2" style="border-left: 2px solid black;">
+                        <div class="category d-flex flex-column justify-content-between my-4 px-3" style="border-left: 2px solid black; width: 25%">
                             <div>
                                 <p><b>${list[i].category}</b></p>
                                 <p class="mt-2 mb-0">${list[i].street}</p>
