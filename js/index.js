@@ -53,7 +53,7 @@ $.getJSON("js/data.json", function (os) {
     $("#category option[value=" + category + "]").attr('selected', 'selected');
 
     for (let key in os) {
-        os[key].category = os[key].category.split(" ")
+        os[key].category = os[key].category.split("/(\s+)/")
         list.push(os[key]);
     }
 
@@ -62,7 +62,7 @@ $.getJSON("js/data.json", function (os) {
         list[i].rating = (list[i].rating1 + list[i].rating2 + list[i].rating3 + list[i].rating4 + list[i].rating5) / 5;
         list[i].visible = true;
         list[i].shortDescription = list[i].description;
-        if (list[i].shortDescription.length < 1) {
+        if (list[i].shortDescription < 1) {
             list[i].shortDescription = 'Ośrodek nie zgłosił się do programu Prawko Plus.';
         }
         if (list[i].shortDescription.length > 80) {
@@ -245,11 +245,11 @@ $.getJSON("js/data.json", function (os) {
             var wal = 'PLN';
             var img = list[i].img;
 
-            if (price.length < 1) {
+            if (list[i].price == 0) {
                 var price = 'brak';
                 var wal = '';
             }
-            if (img.length < 1) {
+            if (list[i].img == 0) {
                 var img = 'card-img.png';
             }
 
